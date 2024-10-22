@@ -55,15 +55,6 @@ CREATE TABLE celestial_object (
     gaseous BOOLEAN -- whether it's a gaseous object
 );
 
-
-CREATE TABLE planetary_bodies (
-    planetary_bodies_id SERIAL PRIMARY KEY, -- auto-incrementing primary key
-    galaxy_id INT REFERENCES galaxy(galaxy_id), -- foreign key linking to galaxy
-    star_id INT REFERENCES star(star_id), -- foreign key linking to star
-    planet_id INT REFERENCES planet(planet_id), -- foreign key linking to planet
-    moon_id INT REFERENCES moon(moon_id) -- foreign key linking to moon
-);
-
 -- Insert data into galaxy table (6 rows)
 INSERT INTO galaxy (name, size_in_km, distance_from_earth, has_life, gaseous)
 VALUES 
